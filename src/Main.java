@@ -1,4 +1,8 @@
+import controller.player;
 import model.*;
+
+import java.io.Console;
+import java.util.Scanner;
 
 public class Main {
     private static String ADMIRAL = "If there are more than 4 cards on the draw pile when it becomes your turn, you receive two credits";
@@ -24,7 +28,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-         deck myDeck;
+        deck myDeck;
+        deck discard;
+        player players[];
 	// write your code here
         myDeck = new deck();
         //myDeck.push(new unit());
@@ -34,7 +40,22 @@ public class Main {
         //while(){
 
         //}
+        System.out.println("How many players will be playing: ");
+        Scanner scan = new Scanner(System.in);
+        int result = scan.nextInt();
+        while(result < 2 || result > 5) {
+            System.out.println("Enter a number between 2 and 5: ");
+            result = scan.nextInt();
+        }
 
+        players = new player[result];
+        for(int i = 0; i<result; i++){
+            players[i] = new player();
+            for(int j=0; j<3; j++)
+                players[i].drawCoin(myDeck);
+        }
+
+        System.out.println(result);
         /*for (int i=0; i<119; i++)
             System.out.println(myDeck.pop());       */
     }
