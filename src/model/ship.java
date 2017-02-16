@@ -32,11 +32,11 @@ public class ship implements card {
         this.name = name;
     }
 
-    public int getCredits() {
+    public int getCost() {
         return credits;
     }
 
-    public void setCredits(int credits) {
+    public void setCost(int credits) {
         this.credits = credits;
     }
 

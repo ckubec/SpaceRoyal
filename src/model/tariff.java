@@ -13,6 +13,10 @@ public class tariff implements card {
         myDescription = theDescription;
     }
 
+    public int getCost(){
+        return 0;
+    }
+
     @Override
     public String toString() {
         return myName + " " + myDescription;

@@ -16,5 +16,12 @@ public class deck extends Stack<card> {
         Collections.shuffle(this);
     }
 
+    public void reshuffle(deck theDiscard){
+        while(theDiscard.size() > 0){
+            this.push(theDiscard.pop());
+        }
+        this.shuffle();
+    }
+
 
 }

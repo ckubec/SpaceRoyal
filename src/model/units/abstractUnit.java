@@ -5,7 +5,7 @@ import model.card;
 /**
  * Created by ckubec on 12/15/16.
  */
-public abstract class abstractUnit implements card {
+public abstract class abstractUnit {
     private int cost;
     private int points;
     private String name;

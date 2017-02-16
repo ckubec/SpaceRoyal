@@ -24,8 +24,12 @@ public class voyage implements card {
         name = theName;
     }
 
-    public unit[] getCost() {
+    public unit[] getCards() {
         return cost;
+    }
+
+    public int getCost() {
+        return 0;
     }
 
     public void setCost(unit[] theCost) {

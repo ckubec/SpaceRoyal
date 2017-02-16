@@ -1,7 +1,6 @@
 import controller.player;
 import model.*;
-
-import java.io.Console;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -29,10 +28,13 @@ public class Main {
 
     public static void main(String[] args) {
         deck myDeck;
+        ArrayList<card> station = new ArrayList<>();
+        ArrayList<voyage> voyage = new ArrayList<>();
         deck discard;
         player players[];
 	// write your code here
         myDeck = new deck();
+        discard = new deck();
         //myDeck.push(new unit());
         myDeck = populate(myDeck);
         myDeck.shuffle();
@@ -49,13 +51,19 @@ public class Main {
         }
 
         players = new player[result];
+
         for(int i = 0; i<result; i++){
             players[i] = new player();
-            for(int j=0; j<3; j++)
-                players[i].drawCoin(myDeck);
+            for(int j=0; j<3; j++) {
+                //System.out.println(players[i].toString());
+                players[i].drawCoin(myDeck, discard);
+
+            }
+            System.out.println(players[i].toString());
         }
 
         System.out.println(result);
+
         /*for (int i=0; i<119; i++)
             System.out.println(myDeck.pop());       */
     }
